@@ -1,9 +1,9 @@
 version: 2
 
 sources:
-  - name: conformed
+  - name: chinook
     database: raw
-    schema: conformed
+    schema: chinoook
 
     tables:
       - name: DateDimension
