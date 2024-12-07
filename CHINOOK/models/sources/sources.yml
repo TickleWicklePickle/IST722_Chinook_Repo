@@ -1,0 +1,21 @@
+version: 2
+
+sources:
+  - name: raw  # Database name
+    schema: chinook  # Schema name
+    tables:
+      - name: datedimension  # Table name (case-insensitive unless quoted)
+        description: "A dimension table containing date information."
+  - name: chinook
+    schema: chinook
+    tables:
+      - name: invoice
+        description: "Invoice data from the Chinook database."
+      - name: invoiceline
+        description: "Invoice line items from the Chinook database."
+      - name: customer
+        description: "Customer data from the Chinook database."
+      - name: track
+        description: "Track data from the Chinook database."
+      - name: album
+        description: "Album data from the Chinook database."
