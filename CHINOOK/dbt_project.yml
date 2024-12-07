@@ -36,7 +36,10 @@ clean-targets:         # directories to be removed by `dbt clean`
 # using the `{{ config(...) }}` macro.
 
 models:
-  chinook:
-    +materialized: table
-    database: raw
+  CHINOOK:
     +schema: chinook
+    example:  # Include example models
+      +enabled: true
+    sources:  # Include the new sources folder
+      +enabled: true
+

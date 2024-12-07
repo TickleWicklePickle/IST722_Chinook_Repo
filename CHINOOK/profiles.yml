@@ -1,0 +1,12 @@
+user:
+  target: default
+  outputs:
+    default:
+      type: snowflake
+      account: SFEDU02-ENB78898
+      user: WOODCHUCK
+      password: NWSN123syr
+      role: TRAINING_ROLE
+      database: RAW  # Ensure this matches the database
+      warehouse: VBAY
+      schema: CHINOOK  # Ensure this matches the schema

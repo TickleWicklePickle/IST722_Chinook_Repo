@@ -1,0 +1,36 @@
+version: 2
+
+models:
+  - name: dim_invoice  # Name of the model file (dim_invoice.sql)
+    description: "The invoice dimension table, containing information about customer purchases."
+    columns:
+      - name: customer_id
+        description: "ID of the customer making the purchase."
+        tests:
+          - not_null
+          - relationships:
+              to: ref('dim_customer')
+              field: customer_id
+      - name: invoice_id
+        description: "Unique identifier for the invoice."
+        tests:
+          - not_null
+          - unique
+      - name: invoice_date
+        description: "Date of the purchase."
+        tests:
+          - not_null
+      - name: billing_address
+        description: "The address where the invoice was billed."
+      - name: billing_city
+        description: "The city where the invoice was billed."
+      - name: billing_state
+        description: "The state where the invoice was billed."
+      - name: billing_country
+        description: "The country where the invoice was billed."
+      - name: billing_postal_code
+        description: "The postal code where the invoice was billed."
+      - name: total_amount
+        description: "Total amount of the purchase."
+        tests:
+          - not_null
