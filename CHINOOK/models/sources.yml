@@ -1,0 +1,49 @@
+version: 2
+
+sources:
+  - name: conformed
+    database: raw
+    schema: conformed
+
+    tables:
+      - name: DateDimension
+        columns:
+          - name: DateKey
+            tests:
+              - unique
+
+  - name: chinook
+    database: raw
+    schema: chinook
+    tables:
+      - name: invoice
+        columns:
+          - name: invoiceid
+            tests:
+              - unique
+        description: "Invoice data from the Chinook database."
+      - name: invoiceline
+        columns:
+          - name: invoicelineid
+            tests:
+              - unique
+        description: "Invoice line items from the Chinook database."
+      - name: customer
+        columns:
+          - name: customerid
+            tests:
+              - unique
+        description: "Customer data from the Chinook database."
+      - name: track
+        columns:
+          - name: trackid
+            tests:
+              - unique
+        description: "Track data from the Chinook database."
+      - name: album
+        columns:
+          - name: albumid
+            tests:
+              - unique
+        description: "Album data from the Chinook database."
+

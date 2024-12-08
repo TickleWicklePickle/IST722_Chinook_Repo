@@ -37,9 +37,14 @@ clean-targets:         # directories to be removed by `dbt clean`
 
 models:
   CHINOOK:
+    +materialized: table
+    database: analytics
     +schema: chinook
     example:  # Include example models
       +enabled: true
     sources:  # Include the new sources folder
       +enabled: true
+
+
+ 
 
