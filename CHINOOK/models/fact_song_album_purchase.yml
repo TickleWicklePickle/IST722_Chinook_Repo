@@ -1,0 +1,55 @@
+version: 2
+
+models:
+  - name: fact_song_album_purchase
+    description: "Fact table capturing song and album purchase details."
+    columns:
+      - name: total_order_amount
+        description: "Sum of unit price * quantity per purchase."
+        data_type: numeric
+        tests:
+          - not_null
+
+      - name: quantity_of_order
+        description: "Number of tracks purchased."
+        data_type: int
+        tests:
+          - not_null
+
+      - name: purchase_date
+        description: "Date of purchase, derived from dim_date."
+        data_type: date
+        tests:
+          - not_null
+          #- relationships:
+          #    to: ref('dim_date')
+          #    field: date
+
+      - name: invoice_id
+        description: "Source key used for drill-through."
+        data_type: int
+        tests:
+          - not_null
+
+          - relationships:
+              to: ref('dim_invoice')
+              field: invoice_id
+
+      - name: album_id
+        description: "Dimension FK for dim_track."
+        data_type: int
+        tests:
+          - not_null
+          - relationships:
+              to: ref('dim_track')
+              field: album_id
+
+      - name: customer_id
+        description: "Dimension FK for dim_customer."
+        data_type: int
+        tests:
+          - not_null
+          - relationships:
+              to: ref('dim_customer')
+              field: customer_id
+

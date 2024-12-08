@@ -1,0 +1,44 @@
+version: 2
+
+models:
+  - name: dim_customer
+    description: "The customer dimension table, containing information about customers."
+    columns:
+      - name: customer_key
+        description: "Primary key of the customer dimension."
+        tests:
+          - not_null
+          - unique     
+      - name: customer_id
+        description: "Business key of the customer dimension."
+        tests:
+          - not_null
+          - unique
+      - name: first_name
+        description: "Customer's first name."
+      - name: last_name
+        description: "Customer's last name."
+      - name: email_address
+        description: "Customer's email address."
+      - name: company
+        description: "Company name"
+      - name: address
+        description: "customer address"
+      - name: city
+        description: "customer city"
+      - name: state
+        description: "customer state"
+      - name: postalcode
+        description: "customer zip"
+      - name: fax
+        description: "customer fax"
+      - name: email
+        description: "customer email"
+      - name: phone
+        description: "customer phone"
+      - name: support_rep_id
+        description: "Employee who helped with the purchase."
+        tests:
+          - relationships:
+              to: ref('dim_employee')  # Assuming `dim_employee` exists
+              field: employee_id
