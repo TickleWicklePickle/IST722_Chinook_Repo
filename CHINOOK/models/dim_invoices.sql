@@ -1,4 +1,6 @@
-
+{{ config(
+    materialized='table'  
+) }}
 with stg_invoice as (
     select * from {{ source('chinook','invoice')}}
 )

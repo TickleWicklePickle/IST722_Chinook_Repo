@@ -1,3 +1,7 @@
+{{ config(
+    materialized='table'  
+) }}
+
 WITH stg_customers AS (
     SELECT
         customerid AS customer_id, -- Primary key of the source systems (business key)

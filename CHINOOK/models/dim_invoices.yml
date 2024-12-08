@@ -22,7 +22,7 @@ models:
               to: ref('dim_customer')
               field: customer_id
       - name: invoice_date
-        description: "Date of the purchase."
+        description: "role play invoice date as invoice date key"
         tests:
           - not_null
       - name: billing_address

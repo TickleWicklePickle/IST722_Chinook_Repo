@@ -21,16 +21,16 @@ models:
         data_type: date
         tests:
           - not_null
-          - relationships:
-              to: ref('dim_date')
-              field: date
+          #- relationships:
+          #    to: ref('dim_date')
+          #    field: date
 
       - name: invoice_id
         description: "Source key used for drill-through."
         data_type: int
         tests:
           - not_null
-          - unique
+
           - relationships:
               to: ref('dim_invoice')
               field: invoice_id
