@@ -7,6 +7,6 @@ user:
       user: WOODCHUCK
       password: NWSN123syr
       role: TRAINING_ROLE
-      database: RAW  # Ensure this matches the database
+      database: ANALYTICS 
       warehouse: VBAY
-      schema: CHINOOK  # Ensure this matches the schema
+      schema: KNIGHTS_WHO_SAY_NI 
