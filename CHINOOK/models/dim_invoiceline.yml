@@ -1,0 +1,29 @@
+version: 2
+models:
+  - name: dim_invoiceline
+    description: "Dimension table for invoice line items, including line-specific details and foreign key references."
+    schema: Knights_Who_Say_Ni
+    database: analytics
+    materialized: table
+    columns:
+      - name: invoicelineid
+        description: "Line item on an invoice."
+        tests:
+          - not_null
+          - unique
+      - name: invoiceid
+        description: "Primary key from the invoice table."
+        tests:
+          - not_null
+      - name: trackid
+        description: "Primary key from the track table."
+        tests:
+          - not_null
+      - name: unitprice
+        description: "Price of the line item."
+        tests:
+          - not_null
+      - name: quantity
+        description: "Quantity of items in the line item."
+        tests:
+          - not_null

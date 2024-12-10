@@ -1,0 +1,17 @@
+version: 2
+models:
+  - name: dim_playlist
+    description: "Dimension table for playlists, containing playlist details."
+    schema: Knights_Who_Say_Ni
+    database: analytics
+    materialized: table
+    columns:
+      - name: playlistid
+        description: "Unique identifier for the playlist (business key)."
+        tests:
+          - not_null
+          - unique
+      - name: playlistname
+        description: "Name of the playlist."
+        tests:
+          - not_null
