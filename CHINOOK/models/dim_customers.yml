@@ -40,5 +40,5 @@ models:
         description: "Employee who helped with the purchase."
         tests:
           - relationships:
-              to: ref('dim_employee')  # Assuming `dim_employee` exists
+              to: ref('dim_employee') 
               field: employee_id
