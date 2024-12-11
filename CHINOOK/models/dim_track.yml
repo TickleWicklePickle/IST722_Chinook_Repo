@@ -1,43 +1,36 @@
 version: 2
 models:
   - name: dim_track
-    description: "Dimension table for tracks including genre, album, and media details."
+    description: "Dimension table for tracks including album, genre, and media details."
     schema: Knights_Who_Say_Ni
     database: analytics
     materialized: table
     columns:
-      - name: trackid
-        description: "Track ID (business key)."
+      - name: track_key
+        description: "Surrogate key for the track."
         tests:
           - not_null
           - unique
-      - name: trackkey
-        description: "Surrogate key for track."
-      - name: trackname
+      - name: track_id
+        description: "Primary key of the track (business key)."
+        tests:
+          - not_null
+          - unique
+      - name: track_name
         description: "Name of the track."
         tests:
           - not_null
-      - name: genrekey
-        description: "Surrogate key for genre."
-      - name: genreid
-        description: "Genre ID."
-      - name: genrename
-        description: "Name of the genre."
-      - name: albumkey
-        description: "Surrogate key for album."
-      - name: albumid
-        description: "Album ID."
-      - name: albumname
-        description: "Name of the album."
-      - name: mediatypeid
+      - name: album_id
+        description: "Foreign key referencing the album dimension."
+      - name: media_type_id
         description: "ID for the media type of the track."
-      - name: medianame
-        description: "Name of the media type (e.g., MPEG audio file, Protected AAC)."
-      - name: compose
+      - name: genre_id
+        description: "Foreign key referencing the genre dimension."
+      - name: composer
         description: "Composer of the track."
-      - name: miliseconds
-        description: "Length of the track in milliseconds."
+      - name: milliseconds
+        description: "Duration of the track in milliseconds."
       - name: bytes
-        description: "Size of the track file in bytes."
-      - name: unitprice
-        description: "Unit price of the track."
+        description: "File size of the track in bytes."
+      - name: unit_price
+        description: "Price per track."

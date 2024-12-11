@@ -51,5 +51,10 @@ sources:
           - name: playlistid
             tests:
               - unique
-        description: "Album data from the Chinook database."
-
+        description: "Playlist data from the Chinook database."
+      - name: genre
+        columns:
+          - name: genreid
+            tests:
+              - unique
+        description: "Genre data from the Chinook database."
