@@ -52,6 +52,13 @@ sources:
             tests:
               - unique
         description: "Playlist data from the Chinook database."
+
+      - name: playlisttrack
+        columns:
+          - name: playlistid
+          - name: trackid
+
+        description: "Tracks in each playlist data from the Chinook database."
       - name: genre
         columns:
           - name: genreid

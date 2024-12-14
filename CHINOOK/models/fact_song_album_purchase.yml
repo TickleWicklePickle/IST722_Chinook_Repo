@@ -43,7 +43,9 @@ models:
           - relationships:
               to: ref('dim_track')
               field: album_id
-
+      - name: track_id
+        description: track id fk
+        
       - name: customer_id
         description: "Dimension FK for dim_customer."
         data_type: int

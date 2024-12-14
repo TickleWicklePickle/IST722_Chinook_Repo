@@ -15,3 +15,6 @@ models:
         description: "Name of the playlist."
         tests:
           - not_null
+      - name: track_id
+        description: tracks in playlist
+         

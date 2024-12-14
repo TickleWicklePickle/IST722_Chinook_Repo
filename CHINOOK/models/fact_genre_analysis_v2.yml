@@ -29,7 +29,7 @@ models:
         tests:
           - not_null
 
-      - name: tracks_purchased_per_genre
+      - name: invoices_per_genre
         description: "Total number of orders made for the genre."
         tests:
           - not_null
