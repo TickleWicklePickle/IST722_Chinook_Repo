@@ -1,0 +1,36 @@
+version: 2
+models:
+  - name: dim_track
+    description: "Dimension table for tracks including album, genre, and media details."
+    schema: Knights_Who_Say_Ni
+    database: analytics
+    materialized: table
+    columns:
+      - name: track_key
+        description: "Surrogate key for the track."
+        tests:
+          - not_null
+          - unique
+      - name: track_id
+        description: "Primary key of the track (business key)."
+        tests:
+          - not_null
+          - unique
+      - name: track_name
+        description: "Name of the track."
+        tests:
+          - not_null
+      - name: album_id
+        description: "Foreign key referencing the album dimension."
+      - name: media_type_id
+        description: "ID for the media type of the track."
+      - name: genre_id
+        description: "Foreign key referencing the genre dimension."
+      - name: composer
+        description: "Composer of the track."
+      - name: milliseconds
+        description: "Duration of the track in milliseconds."
+      - name: bytes
+        description: "File size of the track in bytes."
+      - name: unit_price
+        description: "Price per track."

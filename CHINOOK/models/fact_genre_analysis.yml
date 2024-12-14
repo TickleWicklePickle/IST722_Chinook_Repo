@@ -1,0 +1,32 @@
+version: 2
+models:
+  - name: fact_genre_analysis
+    description: "Fact table for analyzing genre purchases, quantities, and total revenue."
+    schema: Knights_Who_Say_Ni
+    database: analytics
+    materialized: table
+    columns:
+      - name: genre_id
+        description: "Foreign key linking to the genre dimension."
+        tests:
+          - not_null
+      - name: genre_name
+        description: "Name of the genre."
+        tests:
+          - not_null
+      - name: total_order_amount
+        description: "Total revenue for the genre, calculated as the sum of unit price multiplied by quantity."
+        tests:
+          - not_null
+      - name: quantity_of_order
+        description: "Total number of tracks purchased for the genre."
+        tests:
+          - not_null
+      - name: purchase_date
+        description: "Date of purchase (derived from the invoice)."
+        tests:
+          - not_null
+      - name: genre_analysis_key
+        description: "Surrogate key for uniquely identifying each genre analysis record."
+        tests:
+          - not_null

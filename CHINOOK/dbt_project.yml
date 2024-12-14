@@ -39,7 +39,7 @@ models:
   CHINOOK:
     +materialized: table
     database: analytics
-    +schema: chinook
+    +schema: Knights_Who_Say_Ni  # Explicitly set the desired schema name
 #    sources:  # Include the new sources folder
  #     +enabled: true
 
