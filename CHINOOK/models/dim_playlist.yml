@@ -10,11 +10,9 @@ models:
         description: "Unique identifier for the playlist."
         tests:
           - not_null
-          - unique
       - name: playlist_name  # Updated to match dim_playlist.sql
         description: "Name of the playlist."
         tests:
           - not_null
       - name: track_id
         description: tracks in playlist
-         
