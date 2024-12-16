@@ -11,6 +11,7 @@ WITH stg_genre_analysis AS (
         ,count(distinct(p.playlistid)) as playlists_per_genre
         ,SUM(IL.UNITPRICE * IL.QUANTITY) AS revenue_per_genre -- Total revenue per genre
         ,to_date( I.INVOICEDATE) AS purchase_date                      -- Date of purchase
+        ,REPLACE(TO_DATE(I.invoicedate)::varchar,'-','')::int  as invoice_date_key --date key of purchase(aka invoice) date
     FROM {{ source('chinook', 'invoice') }} I
     JOIN {{ source('chinook', 'invoiceline') }} IL ON I.INVOICEID = IL.INVOICEID
     JOIN {{ source('chinook', 'track') }} T ON IL.TRACKID = T.TRACKID

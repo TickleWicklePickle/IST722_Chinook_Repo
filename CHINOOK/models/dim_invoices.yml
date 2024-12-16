@@ -25,6 +25,8 @@ models:
         description: "role play invoice date as invoice date key"
         tests:
           - not_null
+      - name: invoice_date_key
+        description: date key for the invoice date to connect to dim date on an int instead of a wonky date
       - name: billing_address
         description: "The address where the invoice was billed."
       - name: billing_city
@@ -39,4 +41,6 @@ models:
         description: "Total amount of the purchase."
         tests:
           - not_null
+
+
 
