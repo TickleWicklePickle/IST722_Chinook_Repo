@@ -10,6 +10,7 @@ WITH stg_fact_song AS (
         REPLACE(TO_DATE(invoice.invoicedate)::varchar,'-','')::int  as invoice_date_key, --date key of purchase(aka invoice) date
         invoice.invoiceid AS invoice_id, -- Source key used for drill-through
         track.albumid AS album_id, -- Dimension FK for dim_track
+        track.genreid as genre_id, --Dimension FK for dim_genre
         invoice.customerid AS customer_id -- Dimension FK for dim_customer
     FROM {{ source('chinook', 'invoice') }} AS invoice
     JOIN {{ source('chinook', 'invoiceline') }} AS invoiceline

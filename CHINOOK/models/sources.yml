@@ -65,3 +65,10 @@ sources:
             tests:
               - unique
         description: "Genre data from the Chinook database."
+
+      - name: artist
+        columns:
+          - name: artistid
+            tests:
+              - unique
+        description: "Artist data from the Chinook database."
