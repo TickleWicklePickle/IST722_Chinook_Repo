@@ -1,0 +1,25 @@
+version: 2
+
+models:
+  - name: dim_album
+    description: "The customer dimension table, containing information about customers."
+    columns:
+      - name: album_key
+        description:  dimension key
+        tests:
+          - not_null
+          - unique     
+      - name: album_id
+        description: "Business key of the album."
+        tests:
+          - not_null
+          - unique
+      - name: album_title
+        description: album title
+#instead of having two smaller dim tables I'm making one big table
+      - name: artist_id
+        description: artist business key
+      - name: artist_name
+        description: name of artist
+      
+      

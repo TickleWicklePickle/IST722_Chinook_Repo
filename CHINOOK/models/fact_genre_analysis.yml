@@ -45,6 +45,10 @@ models:
         description: "Total revenue for the genre, calculated as the sum of unit price multiplied by quantity."
 
       - name: purchase_date
-        description: "Date of purchase (derived from the invoice)."
+        description: Date of purchase (derived from the invoice).
 
-     
+      - name: purchase_date
+        description: Date of purchase (derived from the invoice).
+
+      - name: artists_per_genre
+        description: count of artists who created a song that belongs to a genre 
